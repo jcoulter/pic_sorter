@@ -13,7 +13,7 @@ class PicSorter
 
 
   def sort(pics)
-    pics.each {|it| puts "Sorting #{it}"}
+    pics.each {|it| puts "Sorting #{it} should go to dir #{Dir.pwd}/#{it.dir_string}"}
     
   end
 end
