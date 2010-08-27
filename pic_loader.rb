@@ -25,6 +25,7 @@ class PicLoader
     
     pic  = Pic.new()
     pic.file = File.new(it)
+
     pic.month = EXIFR::JPEG.new(it).date_time.month
     pic.year = EXIFR::JPEG.new(it).date_time.year
     pics << pic

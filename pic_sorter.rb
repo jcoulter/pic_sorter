@@ -6,6 +6,7 @@
 require File.join(File.dirname(__FILE__), 'pic')
 
 require 'rubygems'
+require 'fileutils'
 require 'set'
 
 
@@ -13,7 +14,21 @@ class PicSorter
 
 
   def sort(pics)
-    pics.each {|it| puts "Sorting #{it} should go to dir #{Dir.pwd}/#{it.dir_string}"}
+    
+
+    pics.each {|it| 
+    puts "Sorting #{it} should go to dir #{Dir.pwd}/#{it.dir_string}"
+    
+    FileUtils.mkdir_p "#{it.dir_string}"
+  
+   #`chmod -R 777 2010`
+   
+   #File.move(it.file, "#{Dir.pwd}/#{it.dir_string}")
+   puts it.file.methods
+   puts File.basename(it.file.path)
+   FileUtils.cp(it.file.path, it.dir_string + File.basename(it.file.path))
+   FileUtils.rm(it.file.path)
+    }
     
   end
 end
