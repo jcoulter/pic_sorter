@@ -3,24 +3,18 @@
 
 #gem install exifr
 
-#require File.join(File.dirname(__FILE__), 'farm_loader')
-#require File.join(File.dirname(__FILE__), 'alpaca_loader')
-#require File.join(File.dirname(__FILE__), 'farm_scraper')
-#require File.join(File.dirname(__FILE__), 'alpaca_scraper')
+require File.join(File.dirname(__FILE__), 'pic')
 
 require 'rubygems'
-require 'exifr'
+require 'set'
 
 
 class PicSorter
 
 
-  def sort
-    puts EXIFR::JPEG.new('pics/IMG_1906.JPG').width 
-    puts EXIFR::JPEG.new('pics/IMG_1906.JPG').date_time
-
-
-    puts Time.new
+  def sort(pics)
+    pics.each {|it| puts "Sorting #{it}"}
+    
   end
 end
 
