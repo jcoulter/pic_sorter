@@ -28,6 +28,7 @@ class PicLoader
 
     pic.month = EXIFR::JPEG.new(it).date_time.month
     pic.year = EXIFR::JPEG.new(it).date_time.year
+    pic.file.close
     pics << pic
     }
     

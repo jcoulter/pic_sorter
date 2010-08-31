@@ -24,10 +24,12 @@ class PicSorter
    #`chmod -R 777 2010`
    
    #File.move(it.file, "#{Dir.pwd}/#{it.dir_string}")
-   puts it.file.methods
+
    puts File.basename(it.file.path)
-   FileUtils.cp(it.file.path, it.dir_string + File.basename(it.file.path))
-   FileUtils.rm(it.file.path)
+   FileUtils.mv(it.file.path, it.dir_string + File.basename(it.file.path))
+   
+   puts it.file.path
+
     }
     
   end
