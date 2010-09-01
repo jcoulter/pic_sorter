@@ -26,7 +26,19 @@ class PicSorter
    #File.move(it.file, "#{Dir.pwd}/#{it.dir_string}")
 
    puts File.basename(it.file.path)
-   FileUtils.mv(it.file.path, it.dir_string + File.basename(it.file.path))
+   
+   base_name = File.basename(it.file.path)
+   
+   new_file =  it.dir_string + base_name
+   
+   while File.exist?(new_file) do 
+     puts "FILE EXISTS!!!!!!!!!! #{new_file}"
+     
+     base_name = "z" + base_name
+     new_file =  it.dir_string + base_name
+   end
+   
+   FileUtils.mv(it.file.path, new_file)
    
    puts it.file.path
 
