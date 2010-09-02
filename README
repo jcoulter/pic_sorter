@@ -1,3 +1,17 @@
-From CMD:
+pic_sorter is a simple util that will sort my photos based on the EXIF meta-data.
+
+Place your jpegs in the staging directory and run "ruby pic_loader.rb".
+
+It will create a folder for the year and a subfolder for the month associated with the date the photo was taken.
+
+Duplicate file names will have a "z" prepended. 
+
+e.g. 
+
+2010/6/myPhoto.jpg
+2010/6/zmyPhoto.jpg
+
+
+To install exifr on Windows - from CMD:
 
 gem install exifr
