@@ -1,6 +1,5 @@
 #!/usr/bin/ruby
 
-require File.join(File.dirname(__FILE__), 'pic_sorter')
 require File.join(File.dirname(__FILE__), 'pic')
 
 require 'exifr'
@@ -27,7 +26,11 @@ class PicLoader
   end
   
   def process_file(file)
-    move_pic(create_pic(file))
+    begin
+      move_pic(create_pic(file))
+    rescue
+      puts "**********Error with File: #{file}"
+    end
   end
   
   def move_pic(pic)
